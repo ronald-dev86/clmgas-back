@@ -1,5 +1,4 @@
-
 module.exports = [
-  require('./userRouter'),
-  require('./props')
+  require('./user.route'),
+  require('./props.route')
 ]

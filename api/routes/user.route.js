@@ -1,4 +1,4 @@
-const { router } = require('./../config/plugins')
+const { router } = require('../config/plugins')
 
 router.get('user1', (req, res) => {
   res.send('!Hola, mundo!')
