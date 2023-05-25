@@ -14,11 +14,9 @@ async function main() {
     console.log('Base de datos corriendo')
     const db = client.db(env.DATABASE_NAME)
     setSocketConnection(db)
-
   } catch (error) {
     console.log('tenemos problemas con la base de datos')
   }
-
 }
 
 async function setSocketConnection(db) {
