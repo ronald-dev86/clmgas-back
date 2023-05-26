@@ -1,6 +1,6 @@
 const { notenv } = require('./plugins')
 
-const environment = {
+const parameters = {
   prod: {
     PORT: process.env.PORT_PROD
   },
@@ -14,4 +14,4 @@ const environment = {
   }
 }
 
-module.exports = environment['dev']
+module.exports = parameters['dev']

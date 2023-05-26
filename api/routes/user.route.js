@@ -1,10 +1,10 @@
+'use strict'
+
 const { router } = require('../config/plugins')
+const { getUsers, saveUser } = require('./../controllers/users.ctrls')
 
-router.get('user1', (req, res) => {
-  res.send('!Hola, mundo!')
-})
+router.get('/users', getUsers)
+router.post('/users', saveUser)
 
-router.get('user2', (req, res) => {
-  res.send('!Hola, mundo! 2')
-})
+
 module.exports = router

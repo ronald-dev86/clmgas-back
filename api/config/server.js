@@ -1,21 +1,22 @@
-const { express } = require('./plugins')
-const env = require('./environment.js')
-const routes = require('./../routes/index')
+const { express, bodyParser } = require('./plugins')
 
-const database = require('./database')
+const env = require('./parameters')
 
+/**
+ * llamamos la base de datos
+ */
+
+require('./database')
 
 const app = express()
 
-app.use('/api', routes);
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use('/api', require('./../routes/index'));
 
-
-
-
-app.listen(env.PORT, async () => {
+app.listen(env.PORT, () => {
   console.log('El servidor está escuchando en el puerto 3000')
-  await database.main()
 })
 
 module.exports = app

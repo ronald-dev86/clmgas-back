@@ -8,11 +8,18 @@ const expressJwt = require('express-jwt');
 
 const MongoClient = require('mongodb').MongoClient;
 
+const { v4: uuidv4 } = require('uuid');
+
+const bodyParser = require('body-parser');
+
 module.exports = {
   express,
   router,
   notenv,
   jwt,
   expressJwt,
-  MongoClient
+  MongoClient,
+  uuidv4,
+  bodyParser
+
 }
